@@ -1,0 +1,109 @@
+﻿@model SitioPCFull.Models.productos
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="p-3 text-white">
+        <h2 class="text-warning">Eliminar producto</h2>
+        <h3 class="text-danger">¿Seguro que quieres eliminar este producto?</h3>
+        <div>
+
+            <dl class="p-5">
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.nombre):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.nombre)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.procesador):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.procesador)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.graficos):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.graficos)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.ram):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.ram)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.pantalla):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.pantalla)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.almacenamiento):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.almacenamiento)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.bateria):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.bateria)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.so):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.so)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.audio):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.audio)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.puertos):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.puertos)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.conectividad):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.conectividad)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.precio):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.precio)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.existencias):
+                </dt>
+
+                <dd>@Html.DisplayFor(model => model.existencias)</dd>
+
+                <dt class="text-danger float-left pr-3">
+                    @Html.DisplayNameFor(model => model.img):
+                </dt>
+
+                <dd><img class="w-25" src="@Url.Action("getImage","productos",new { id=Model.Id})" /></dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions">
+                    <button type="submit" value="Delete" class="btn btn-danger ml-5">Eliminar</button>
+                    @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-outline-info" })
+                </div>
+            }
+        </div>
+    </div>

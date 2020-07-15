@@ -1,0 +1,331 @@
+﻿body {
+    font-family: sans-serif;
+}
+/*----------------Fondo del body------------------*/
+.fondo-body {
+    background: #002c3b;
+}
+/*----------------Estilos nuevos-------------------*/
+.shadow-logo {
+    box-shadow: 13px 13px 13px rgba(64, 41, 41,.9);
+    border-bottom-right-radius: 12px;
+}
+
+shadowbtn-ri {
+    border-bottom-right-radius: 12px;
+    box-shadow: 0px 7px 5px rgba(61, 133, 133,.8);
+}
+
+.bgnav {
+    background: rgba(46,46,46,.9);
+    box-shadow: 0px 4px 3px rgba(64, 41, 41,.8);
+    font-family: sans-serif;
+}
+
+.layout li:hover {
+    border-radius: 10px;
+    box-shadow: 0px 7px 5px rgba(61, 133, 133,.8);
+}
+
+.layout li a {
+    color: #fff;
+}
+
+.shadow-form {
+    box-shadow: 0px 0px 6px #848484;
+}
+/*-----------Slider automatico-------------*/
+.slider {
+    width: 100%;
+    margin-top: 0%;
+    overflow: hidden;
+}
+
+    .slider ul {
+        margin-top: 0%;
+        display: flex;
+        padding: 0%;
+        width: 400%;
+        animation: cambio 20s infinite alternate linear;
+    }
+
+    .slider li {
+        margin-top: 0%;
+        width: 100%;
+        list-style: none;
+    }
+
+    .slider img {
+        margin-top: 0%;
+        width: 100%;
+    }
+
+@keyframes cambio {
+    0% {
+        margin-left: 0%;
+    }
+
+    20% {
+        margin-left: 0%;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+/*----------------Imagenes de muestra debajo del slider-----------------*/
+.img-principal {
+    width: 100%;
+}
+
+.img-muestra {
+    list-style: none;
+    width: 100%;
+}
+
+    .img-muestra img {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+.titulo {
+    margin: 0%;
+    font-family: fantasy;
+    font-size: 80px;
+    text-align: center;
+    color: red;
+}
+/*----------------PRODUCTOS-----------------*/
+.filtro {
+    width: 100%;
+    margin-top: 0%;
+    overflow: hidden;
+}
+
+    .filtro ul {
+        display: flex;
+        padding: 0%;
+        width: 100%;
+    }
+
+    .filtro li {
+        list-style: none;
+        padding: 10px;
+    }
+
+    .filtro img {
+        width: 100%;
+        background: rgba(0, 70, 94,.6);
+        box-shadow: 7px 13px 37px #000;
+    }
+/*---------------Lista de productos 1 para escritorio-------------------*/
+.conten-padre {
+    display: flex;
+    width: 100%;
+}
+
+.contenedor {
+    height: 330px;
+    width: 400px;
+    margin: 40px;
+    margin-bottom: 130px;
+    -webkit-perspective: 700px;
+}
+
+.carta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 2s;
+}
+
+    .carta:hover {
+        transform: rotateY(180deg);
+    }
+
+.lado {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.frente {
+    background: rgba(0, 70, 94,.6);
+    box-shadow: 7px 13px 37px #000;
+}
+
+.atras {
+    background: #c3d3d9;
+    box-shadow: 7px 13px 37px #000;
+    transform: rotateY(180deg);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.ficha-tecnica {
+    font-size: 12px;
+    text-align: justify;
+}
+
+    .ficha-tecnica p {
+        margin: 6px;
+    }
+
+.nom-producto {
+    color: #fff;
+    text-align: center;
+    font-size: 23px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.precio-producto {
+    color: #ff0000;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: monospace;
+}
+
+.etiqueta {
+    position: relative;
+    text-align: center;
+}
+
+.existencias {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    display: inline;
+}
+/*------------Productos para movil-------------*/
+@media (max-width:768px) {
+    .conten-padre {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor {
+        height: 320px;
+        width: 330px;
+        margin: 27px;
+        margin-bottom: 120px;
+        -webkit-perspective: 700px;
+    }
+
+    .carta {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 2s;
+    }
+
+        .carta:hover {
+            transform: rotateY(180deg);
+        }
+
+    .lado {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        position: absolute;
+    }
+
+    .frente {
+        background: rgba(0, 70, 94,.6);
+        box-shadow: 7px 13px 37px #000;
+    }
+
+    .atras {
+        background: #c3d3d9;
+        box-shadow: 7px 13px 37px #000;
+        transform: rotateY(180deg);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .ficha-tecnica {
+        font-size: 12px;
+        text-align: justify;
+        margin: 0%;
+    }
+
+        .ficha-tecnica p {
+            margin: 4px;
+        }
+
+    .nom-producto {
+        color: #fff;
+        text-align: center;
+        font-size: 19px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .precio-producto {
+        color: #ff0000;
+        text-align: center;
+        font-size: 23px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: monospace;
+    }
+
+    .existencias {
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        display: inline;
+    }
+
+    .etiqueta {
+        position: relative;
+        text-align: center;
+    }
+}
+/*------------------Estilos del avatar de Login---------------------------*/
+.user-img {
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+    .user-img img {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0px 0px 6px #848484;
+        border-radius: 50%;
+    }

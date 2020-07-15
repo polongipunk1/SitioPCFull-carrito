@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MundoPC</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/styles.css")
+    @Styles.Render("~/Img/png")
+    @Styles.Render("~/Img/jpg")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="fondo-body">
+    <nav class="navbar navbar-expand-xl navbar-dark text-white sticky-top bgnav">
+        <a href='@Url.Action("Index","Home")' class="navbar-brand text-white font-weight-bold shadow-logo text-danger">MundoPC</a>
+        <button class="navbar-toggler btn-outline-secondary" data-target="#menu" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon align-items-center"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav mr-auto layout">
+                @if (!User.IsInRole("Admin"))
+                {
+                    <li class="nav-item active"><a href='@Url.Action("Lista", "productos")' class="text-white nav-link hoverli">Productos</a></li>
+                    if (Session["carrito"] != null)
+                    {
+                        <li class="nav-item active"><a href='@Url.Action("AgregaCarrito", "Carrito")' class="text-white nav-link voverli">Carrito</a></li>
+                    }
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("Cliente"))
+                {
+                    <li class="nav-item active"><a href='@Url.Action("MisCompras", "venta")' class="text-white nav-link hoverli">Mis compras</a></li>
+
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li class="nav-item active"><a href='@Url.Action("Index", "RolesAdmin")' class="text-white nav-link hoverli">Adminstrar Roles</a></li>
+                    <li class="nav-item active"><a href='@Url.Action("Index", "UsersAdmin")' class="text-white nav-link hoverli">Administrar Usuarios</a></li>
+                    <li class="nav-item active"><a href='@Url.Action("Index", "productos")' class="text-white nav-link hoverli">Administrar Productos</a></li>
+                    <li class="nav-item active"><a href='@Url.Action("Index", "venta")' class="text-white nav-link hoverli">Administrar Ventas</a></li>
+                    @*<li class="nav-item active"><a href='@Url.Action("Index", "UsersAdmin")' class="text-white nav-link hoverli">Pedidos </a></li>*@
+                }
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
+    @RenderBody()
+    <div class="shadow-lg pt-4">
+        <footer class="footer text-center text-light">
+            <p>MundoPC &copy; @DateTime.Now.Year - Todos los derechos reservados</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
