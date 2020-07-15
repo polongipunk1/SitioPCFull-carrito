@@ -9,12 +9,7 @@ namespace SitioPCFull.Models
     {
         private productos _producto;
         private int _cantidad;
-
-        public CarritoItem()
-        {
-
-        }
-
+        
         public CarritoItem(productos producto, int cantidad)
         {
             this._producto = producto;
